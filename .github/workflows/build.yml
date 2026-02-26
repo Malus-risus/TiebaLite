@@ -56,13 +56,13 @@ jobs:
         env:
           version_code: ${{ fromJSON(steps.read_output_metadata.outputs.content).elements[0].versionCode }}
           version_name: ${{ fromJSON(steps.read_output_metadata.outputs.content).elements[0].versionName }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: "release-${{ env.version_name }}(${{ env.version_code }})"
           path: ./app/build/outputs/apk/release
 
       - name: Upload Mapping
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: mapping
           path: ./app/build/outputs/mapping/release

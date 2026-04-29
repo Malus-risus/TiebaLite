@@ -20,7 +20,7 @@ jobs:
       - name: Decode Keystore
         id: decode_keystore
         if: ${{ github.event_name != 'pull_request' || github.ref_type == 'tag' }}
-        uses: timheuer/base64-to-file@v1.2
+        uses: timheuer/base64-to-file@v2.0
         with:
           fileName: ${{ vars.RELEASE_KEYSTORE }}
           fileDir: ${{ github.workspace }}
